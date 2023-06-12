@@ -6,7 +6,7 @@ function Message(props) {
   return (
     <div className="message_container">
       <img alt="" src={props.link}></img>
-      <div>
+      <div className="nameAndMessage">
         <h3>{props.name}</h3>
         <h4>{props.lastMessage}</h4>
       </div>
