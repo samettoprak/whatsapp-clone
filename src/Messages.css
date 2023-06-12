@@ -1,0 +1,42 @@
+.message_container {
+  display: flex;
+  width: 100%;
+  height: calc(100% - 75px);
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 30%;
+  min-width: 300px;
+
+  overflow: auto;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: red;
+  width: auto;
+  justify-content: space-evenly;
+  padding: 10px 0px;
+  background-color: #111b21;
+  color: #aebac1;
+}
+.search_input {
+  border: none;
+  border-radius: 10px;
+  width: auto;
+  width: 80%;
+  height: 100%;
+  background-color: #202c33;
+  padding-left: 20px;
+}
+
+.content {
+  height: 100%;
+  width: 70%;
+  background-color: blanchedalmond;
+}

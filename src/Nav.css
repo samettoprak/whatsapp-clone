@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: #aebac1;
   position: relative;
   z-index: 1;
   box-shadow: 0.5px 0 0 rgba(255, 255, 255, 0.2);
@@ -36,7 +36,7 @@
   align-items: center;
   background-color: #202c33;
   width: 70%;
-  color: white;
+  color: #aebac1;
 }
 
 .nav_right_info {
