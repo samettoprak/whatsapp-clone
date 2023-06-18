@@ -3,12 +3,15 @@ import "./Messages.css";
 import { BsFilter } from "react-icons/bs";
 import Message from "./Message";
 import messageData from "./MessageData";
+import ContactPage from "./ContactPage";
 
 function Messages() {
   const [liste, setListe] = useState([]);
+  const [selectedGroup, setSelectedGroup] = useState("");
 
   useEffect(() => {
     const updatedListe = messageData["groups"].map((group) => ({
+      groupName: group.group_name,
       name: group["messages"][group["messages"].length - 1].sender,
       lastMessage: group["messages"][group["messages"].length - 1].content,
       lastSeen: "12",
@@ -16,6 +19,14 @@ function Messages() {
 
     setListe(updatedListe);
   }, [messageData]);
+
+  const handleMessageClick = (groupName) => {
+    setSelectedGroup(groupName);
+    console.log("Tıklanan grup adı:", groupName);
+  };
+  function asd() {
+    console.log("samet");
+  }
 
   return (
     <div className="messages_container">
@@ -30,12 +41,6 @@ function Messages() {
           </h2>
         </div>
         <div className="all_contacts">
-          <Message
-            name="Osman"
-            lastMessage="Görüşürüz diyorum"
-            link="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-            lastSeen="Cumartesi"
-          ></Message>
           {liste &&
             liste.map((message, index) => (
               <Message
@@ -43,12 +48,16 @@ function Messages() {
                 name={message.name}
                 lastMessage={message.lastMessage}
                 lastSeen={message.lastSeen}
+                groupName={message.groupName}
+                onClick={() => handleMessageClick(message.groupName)}
               />
             ))}
           <div>Kişisel mesajlarınız uçtan uca şifrelidir</div>
         </div>
       </div>
-      <div className="content"></div>
+      <div className="content">
+        {selectedGroup && <ContactPage groupName={selectedGroup} />}
+      </div>
     </div>
   );
 }
