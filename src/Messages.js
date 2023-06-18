@@ -29,7 +29,7 @@ function Messages() {
             <BsFilter />
           </h2>
         </div>
-        <div>
+        <div className="all_contacts">
           <Message
             name="Osman"
             lastMessage="Görüşürüz diyorum"
@@ -45,6 +45,7 @@ function Messages() {
                 lastSeen={message.lastSeen}
               />
             ))}
+          <div>Kişisel mesajlarınız uçtan uca şifrelidir</div>
         </div>
       </div>
       <div className="content"></div>

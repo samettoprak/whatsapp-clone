@@ -40,3 +40,16 @@
   background-image: url("https://wallpapercave.com/wp/wp6988787.png");
   background-size: contain;
 }
+
+.all_contacts {
+  overflow-y: auto;
+}
+
+.all_contacts::-webkit-scrollbar {
+  background-color: #111b21;
+  width: 7px;
+}
+
+.all_contacts::-webkit-scrollbar-thumb {
+  background: #374045;
+}
