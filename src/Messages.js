@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Messages.css";
 import { BsFilter } from "react-icons/bs";
 import Message from "./Message";
@@ -8,6 +8,9 @@ import ContactPage from "./ContactPage";
 function Messages() {
   const [liste, setListe] = useState([]);
   const [selectedGroup, setSelectedGroup] = useState("");
+  const contentRef = useRef(null);
+  const [searchedContact, setSearchedContact] = useState("");
+  const [tempList, setTempList] = useState([]);
 
   useEffect(() => {
     const updatedListe = messageData["groups"].map((group) => ({
@@ -18,15 +21,26 @@ function Messages() {
     }));
 
     setListe(updatedListe);
-  }, [messageData]);
+    setTempList(liste);
+    console.log("alo");
+    console.log(tempList);
+  }, [messageData.groups]);
+
+  useEffect(() => {
+    if (!searchedContact == "") {
+      const searchedContacts = liste.filter((messages) =>
+        messages.groupName.toLowerCase().includes(searchedContact)
+      );
+      setTempList(searchedContacts);
+    } else {
+      setTempList(liste);
+    }
+  }, [searchedContact]);
 
   const handleMessageClick = (groupName) => {
     setSelectedGroup(groupName);
     console.log("Tıklanan grup adı:", groupName);
   };
-  function asd() {
-    console.log("samet");
-  }
 
   return (
     <div className="messages_container">
@@ -35,14 +49,17 @@ function Messages() {
           <input
             className="search_input"
             placeholder="Aratın veya yeni sohbet başlatın"
+            onChange={(e) => {
+              setSearchedContact(e.target.value);
+            }}
           ></input>
           <h2>
             <BsFilter />
           </h2>
         </div>
         <div className="all_contacts">
-          {liste &&
-            liste.map((message, index) => (
+          {tempList &&
+            tempList.map((message, index) => (
               <Message
                 key={index}
                 name={message.name}
@@ -56,7 +73,18 @@ function Messages() {
         </div>
       </div>
       <div className="content">
-        {selectedGroup && <ContactPage groupName={selectedGroup} />}
+        <div className="content_scroll">
+          {selectedGroup && (
+            <>
+              <ContactPage groupName={selectedGroup} />
+              <div ref={contentRef} />{" "}
+            </>
+          )}
+        </div>
+        <div className="send_message">
+          <div></div>
+          <input placeholder="Bir mesaj yazın"></input>
+        </div>
       </div>
     </div>
   );

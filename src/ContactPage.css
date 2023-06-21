@@ -1,3 +1,12 @@
 .ContactPage_container {
-  background-color: red;
+  height: 100%;
+  margin-top: 10px;
+  overflow-y: scroll;
+}
+
+.ContactPage_container::-webkit-scrollbar {
+  width: 7px;
+}
+.ContactPage_container::-webkit-scrollbar-thumb {
+  background: #37404590;
 }

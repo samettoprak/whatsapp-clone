@@ -10,8 +10,19 @@ const messageData = {
           timestamp: "2023-06-11 08:00:00",
         },
         {
+          sender: "Anne",
+          content: "Naber",
+          timestamp: "2023-06-11 08:00:00",
+        },
+
+        {
           sender: "Baba",
-          content: "Günaydın, nasılsınız?",
+          content: "Günaydın",
+          timestamp: "2023-06-11 08:01:00",
+        },
+        {
+          sender: "Baba",
+          content: "Nasılsınız?",
           timestamp: "2023-06-11 08:01:00",
         },
         {
@@ -28,6 +39,47 @@ const messageData = {
           sender: "Baba",
           content: "Belki pizza söyleyebiliriz.",
           timestamp: "2023-06-11 08:04:00",
+        },
+        {
+          sender: "Kardeş",
+          content: "Pizza iyi fikir, ben de pizza istiyorum!",
+          timestamp: "2023-06-11 08:05:00",
+        },
+        {
+          sender: "Anne",
+          content: "Tamam, o zaman akşam pizza söyleyelim.",
+          timestamp: "2023-06-11 08:06:00",
+        },
+        {
+          sender: "Baba",
+          content: "Hepinize katılıyorum, pizza harika olacak!",
+          timestamp: "2023-06-11 08:07:00",
+        },
+        {
+          sender: "Anne",
+          content: "Hangi pizzayı tercih edersiniz? Mozarella mı, sucuklu mu?",
+          timestamp: "2023-06-11 08:08:00",
+        },
+        {
+          sender: "Baba",
+          content: "Benim tercihim mozarella, siz ne dersiniz?",
+          timestamp: "2023-06-11 08:09:00",
+        },
+        {
+          sender: "Kardeş",
+          content: "Sucuklu da güzel olabilir, karar veremiyorum.",
+          timestamp: "2023-06-11 08:10:00",
+        },
+        {
+          sender: "Anne",
+          content:
+            "Öyleyse ikiye bölelim. Yarısı mozarella, yarısı sucuklu olsun.",
+          timestamp: "2023-06-11 08:11:00",
+        },
+        {
+          sender: "Baba",
+          content: "Harika bir plan! İki farklı lezzeti deneyebiliriz.",
+          timestamp: "2023-06-11 08:12:00",
         },
       ],
     },

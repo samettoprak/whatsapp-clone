@@ -31,16 +31,8 @@
   height: 100%;
   background-color: #202c33;
   padding-left: 20px;
+  color: white;
 }
-
-.content {
-  height: 100%;
-  width: 70%;
-  background-color: blanchedalmond;
-  background-image: url("https://wallpapercave.com/wp/wp6988787.png");
-  background-size: contain;
-}
-
 .all_contacts {
   overflow-y: auto;
 }
@@ -52,4 +44,31 @@
 
 .all_contacts::-webkit-scrollbar-thumb {
   background: #374045;
+}
+.content {
+  height: 100%;
+  width: 70%;
+  background-image: url("https://wallpapercave.com/wp/wp6988787.png");
+  background-size: contain;
+}
+.content_scroll {
+  width: 100%;
+  height: calc(100% - 70px);
+}
+
+.send_message {
+  height: 60px;
+  display: flex;
+  width: 100%;
+  background-color: #202c33;
+  justify-content: center;
+  align-items: center;
+}
+.send_message > input {
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  padding-left: 20px;
+  outline: none;
 }
