@@ -8,9 +8,9 @@ import ContactPage from "./ContactPage";
 function Messages() {
   const [liste, setListe] = useState([]);
   const [selectedGroup, setSelectedGroup] = useState("");
-  const contentRef = useRef(null);
   const [searchedContact, setSearchedContact] = useState("");
   const [tempList, setTempList] = useState([]);
+  const [sendMessage, setSendMessage] = useState("");
 
   useEffect(() => {
     const updatedListe = messageData["groups"].map((group) => ({
@@ -27,7 +27,7 @@ function Messages() {
   }, [messageData.groups]);
 
   useEffect(() => {
-    if (!searchedContact == "") {
+    if (!searchedContact == "" || !searchedContact == null) {
       const searchedContacts = liste.filter((messages) =>
         messages.groupName.toLowerCase().includes(searchedContact)
       );
@@ -35,12 +35,13 @@ function Messages() {
     } else {
       setTempList(liste);
     }
-  }, [searchedContact]);
+  }, [searchedContact, liste]);
 
   const handleMessageClick = (groupName) => {
     setSelectedGroup(groupName);
     console.log("Tıklanan grup adı:", groupName);
   };
+  const sendMessageToContact = () => {};
 
   return (
     <div className="messages_container">
@@ -77,13 +78,17 @@ function Messages() {
           {selectedGroup && (
             <>
               <ContactPage groupName={selectedGroup} />
-              <div ref={contentRef} />{" "}
             </>
           )}
         </div>
         <div className="send_message">
-          <div></div>
-          <input placeholder="Bir mesaj yazın"></input>
+          <input
+            placeholder="Bir mesaj yazın"
+            onChange={(a) => {
+              setSendMessage(a.target.value);
+            }}
+          ></input>
+          <button onClick={sendMessageToContact}>Gönder</button>
         </div>
       </div>
     </div>
