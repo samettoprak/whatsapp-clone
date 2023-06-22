@@ -75,20 +75,7 @@ function Messages() {
       </div>
       <div className="content">
         <div className="content_scroll">
-          {selectedGroup && (
-            <>
-              <ContactPage groupName={selectedGroup} />
-            </>
-          )}
-        </div>
-        <div className="send_message">
-          <input
-            placeholder="Bir mesaj yazın"
-            onChange={(a) => {
-              setSendMessage(a.target.value);
-            }}
-          ></input>
-          <button onClick={sendMessageToContact}>Gönder</button>
+          {selectedGroup && <ContactPage groupName={selectedGroup} />}
         </div>
       </div>
     </div>

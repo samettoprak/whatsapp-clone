@@ -1,12 +1,35 @@
-.ContactPage_container {
+.ContactPage_container2 {
   height: 100%;
 
   overflow-y: scroll;
 }
+.ContactPage_container {
+  height: 100%;
+}
 
-.ContactPage_container::-webkit-scrollbar {
+.ContactPage_container2::-webkit-scrollbar {
   width: 7px;
 }
-.ContactPage_container::-webkit-scrollbar-thumb {
+.ContactPage_container2::-webkit-scrollbar-thumb {
   background: #37404590;
+}
+
+.send_message {
+  height: 60px;
+  display: flex;
+  width: 100%;
+  background-color: #202c33;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #7c8c95;
+}
+.send_message > input {
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  padding-left: 20px;
+  outline: none;
+  background-color: #2a3942;
+  color: white;
 }
