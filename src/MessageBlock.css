@@ -1,7 +1,20 @@
 .message_block_container {
   display: flex;
 }
+
 .message_block_container > img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-left: 30px;
+}
+
+.message_block_containerv2 {
+  display: flex;
+  align-self: flex-end;
+}
+
+.message_block_containerv2 > img {
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -18,9 +31,10 @@
   width: fit-content;
   max-width: 500px;
   border-radius: 10px;
-  border-top-left-radius: 0;
+
   padding: 10px;
   margin-bottom: 10px;
+  margin-right: 10px;
 }
 .block_container.v2 {
   margin-left: 75px;
@@ -28,19 +42,27 @@
   margin-top: -7px;
 }
 
-.block_container > i {
+.i1 {
   position: absolute;
-  width: 0;
-  height: 0;
+  width: 10px;
+  height: 10px;
   border-left: 10px solid transparent;
-
   border-top: 10px solid #202c33;
   border-top-left-radius: 5px;
   left: 0;
   top: 0;
   margin-left: -10px;
 }
-
+.i2 {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #202c33;
+  border-top-right-radius: 5px;
+  right: -10px;
+  top: 0;
+}
 .block_container > h4,
 h5 {
   margin: 0px;

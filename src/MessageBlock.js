@@ -6,8 +6,12 @@ const MessageBlock = (props) => {
   const hour = String(dateTime.getHours()).padStart(2, "0");
   const minutes = String(dateTime.getMinutes()).padStart(2, "0");
   return (
-    <div className="message_block_container">
-      {!props.moreThanOne ? (
+    <div
+      className={
+        !props.right ? "message_block_container" : "message_block_containerv2"
+      }
+    >
+      {!props.moreThanOne && !props.right ? (
         <img
           src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
           alt=""
@@ -22,7 +26,7 @@ const MessageBlock = (props) => {
       >
         {!props.moreThanOne ? (
           <>
-            <i></i>
+            {!props.right ? <i className="i1"></i> : <i className="i2"></i>}
             <h4>{props.sender}</h4>
           </>
         ) : (

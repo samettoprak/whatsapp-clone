@@ -19,7 +19,7 @@
 }
 .nav_left > img {
   margin-left: 10px;
-  height: 80%;
+  height: 40px;
   border-radius: 50%;
 }
 .nav_left_buttons {
@@ -47,7 +47,7 @@
 }
 .nav_right_info > img {
   margin-left: 10px;
-  height: 80%;
+  height: 40px;
   border-radius: 50%;
 }
 .contact_info {

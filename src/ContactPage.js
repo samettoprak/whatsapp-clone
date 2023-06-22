@@ -58,8 +58,12 @@ function ContactPage(props) {
       <div ref={autoScroll} className="ContactPage_container2">
         {contactMessages &&
           contactMessages.map((object, index) => {
+            var right = false;
             var tempSender;
             var tempBool = false;
+            if (object.sender == "Samet") {
+              right = true;
+            }
             if (index == 0) {
               tempSender = object.sender;
               tempBool = false;
@@ -73,6 +77,7 @@ function ContactPage(props) {
             return (
               <MessageBlock
                 key={index}
+                right={right}
                 moreThanOne={tempBool}
                 sender={object.sender}
                 content={object.content}

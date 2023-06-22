@@ -1,7 +1,8 @@
 .ContactPage_container2 {
   height: 100%;
-
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }
 .ContactPage_container {
   height: 100%;
